@@ -4,6 +4,10 @@ namespace BetterDecorador
 {
     public class Program
     {
+        /// <summary>
+        /// Main program that receive the needed args to call the method Decor
+        /// </summary>
+        /// <param name="args"> Argumentos necessários, sendo necessariamente uma string, seguido de um character e um número</param>
         private static void Main(string[] args)
         {
             string frase = args[0];
@@ -13,6 +17,13 @@ namespace BetterDecorador
         }
 
 
+        /// <summary>
+        /// Method to write a string with the specified decoration around it's main text line.
+        /// </summary>
+        /// <param name="s"> String that gonna be in the middle</param>
+        /// <param name="dec">character used to decorate the start and end of the string</param>
+        /// <param name="numero">number of times that the character shows up</param>
+        /// <returns></returns>
         private static string Decor(string s, char dec, int numero)
         {
             char decorador = dec;
