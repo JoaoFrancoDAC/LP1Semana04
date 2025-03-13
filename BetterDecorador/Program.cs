@@ -10,10 +10,17 @@ namespace BetterDecorador
         /// <param name="args"> Argumentos necessários, sendo necessariamente uma string, seguido de um character e um número</param>
         private static void Main(string[] args)
         {
-            string frase = args[0];
-            char c = Convert.ToChar(args[1]);
-            int i = Convert.ToInt32(args[2]);
-            Console.WriteLine(Decor(frase, c, i));
+            if (args.Length != 3)
+            {
+                Console.WriteLine(Decor());
+            }
+            else 
+            {
+                string frase = args[0];
+                char c = Convert.ToChar(args[1]);
+                int i = Convert.ToInt32(args[2]);
+                Console.WriteLine(Decor(frase, c, i));
+            }
         }
 
 
@@ -39,6 +46,14 @@ namespace BetterDecorador
                 frase += character;
             }
             return frase;
+        }
+        /// <summary>
+        /// Overload of the method Decor in case the user doesn't specify the right amount of arguments
+        /// </summary>
+        /// <returns></returns>
+        private static string Decor()
+        {
+            return "=== User did not specify args! ===";
         }
     }
 }
